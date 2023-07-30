@@ -1060,6 +1060,10 @@ def create_ui():
     with gr.Blocks(analytics_enabled=False) as extras_interface:
         ui_postprocessing.create_ui()
 
+    with gr.Blocks(analytics_enabled=False) as qr_toolkit_interface:
+        gr.HTML(value="<iframe id='qrtoolkit-iframe' src='https://qrcode.antfu.me'></iframe>")
+
+
     with gr.Blocks(analytics_enabled=False) as pnginfo_interface:
         with gr.Row().style(equal_height=False):
             with gr.Column(variant='panel'):
@@ -1464,15 +1468,18 @@ def create_ui():
         (img2img_interface, "img2img", "img2img"),
         (extras_interface, "Extras", "extras"),
         (pnginfo_interface, "PNG Info", "pnginfo"),
-        (modelmerger_interface, "Checkpoint Merger", "modelmerger"),
-        (train_interface, "Train", "train"),
+        # (modelmerger_interface, "Checkpoint Merger", "modelmerger"),
+        # (train_interface, "Train", "train"),
     ]
 
     interfaces += script_callbacks.ui_tabs_callback()
-    interfaces += [(settings.interface, "Settings", "settings")]
+    # interfaces += [(settings.interface, "Settings", "settings")]
 
     extensions_interface = ui_extensions.create_ui()
-    interfaces += [(extensions_interface, "Extensions", "extensions")]
+    interfaces += [
+        (qr_toolkit_interface, 'QR Toolkit', 'qrtoolkit'),
+        # (extensions_interface, "Extensions", "extensions"),
+    ]
 
     shared.tab_names = []
     for _interface, label, _ifid in interfaces:
@@ -1510,7 +1517,7 @@ def create_ui():
         footer = footer.format(versions=versions_html(), api_docs="/docs" if shared.cmd_opts.api else "https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/API")
         gr.HTML(footer, elem_id="footer")
 
-        settings.add_functionality(demo)
+        # settings.add_functionality(demo)
 
         update_image_cfg_scale_visibility = lambda: gr.update(visible=shared.sd_model and shared.sd_model.cond_stage_key == "edit")
         settings.text_settings.change(fn=update_image_cfg_scale_visibility, inputs=[], outputs=[image_cfg_scale])
@@ -1548,7 +1555,7 @@ def create_ui():
                 primary_model_name,
                 secondary_model_name,
                 tertiary_model_name,
-                settings.component_dict['sd_model_checkpoint'],
+                # settings.component_dict['sd_model_checkpoint'],
                 modelmerger_result,
             ]
         )

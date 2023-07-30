@@ -1,0 +1,50 @@
+{
+    "hashes": {
+        "checkpoint/v1-5-pruned-emaonly.safetensors": {
+            "mtime": 1690361008.5682971,
+            "sha256": "6ce0161689b3853acaa03779ec93eafe75a02f4ced659bee03f50797806fa2fa"
+        }
+    },
+    "extensions-git": {
+        "sd-webui-photopea-embed": {
+            "mtime": 1690361308.0297353,
+            "value": {
+                "remote": "https://github.com/yankooliveira/sd-webui-photopea-embed",
+                "commit_date": 1686995210,
+                "branch": "main",
+                "commit_hash": "f3874a0c7b416553aa042e607511ffedf075e5b4",
+                "version": "f3874a0c"
+            }
+        },
+        "open-pose-editor": {
+            "mtime": 1690366190.424543,
+            "value": {
+                "remote": "https://github.com/ZhUyU1997/open-pose-editor",
+                "commit_date": 1688653551,
+                "branch": "main",
+                "commit_hash": "8e659f1f1995715621ac3f50d9c34d55faf5296d",
+                "version": "8e659f1f"
+            }
+        },
+        "openpose-editor": {
+            "mtime": 1690366255.711784,
+            "value": {
+                "remote": "https://github.com/fkunn1326/openpose-editor.git",
+                "commit_date": 1685768092,
+                "branch": "master",
+                "commit_hash": "722bca6fb9b062815d13b950e7040589abaec797",
+                "version": "722bca6f"
+            }
+        },
+        "sd-webui-inpaint-anything": {
+            "mtime": 1690366739.3120048,
+            "value": {
+                "remote": "https://github.com/Uminosachi/sd-webui-inpaint-anything",
+                "commit_date": 1690183862,
+                "branch": "main",
+                "commit_hash": "fdd855f9e2c18f686ba7353f8eed49a8ba9b1bd6",
+                "version": "fdd855f9"
+            }
+        }
+    }
+}
